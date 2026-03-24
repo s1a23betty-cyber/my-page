@@ -14,7 +14,7 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#1A1A1C;display:flex;flex-direction:column;
-  align-items:center;justify-content:center;height:100vh;
+  align-items:center;justify-content:center;height:100vh;height:100dvh;
   overflow:hidden;font-family:'Noto Sans TC','Microsoft JhengHei','PingFang TC','Heiti TC',sans-serif}
 #dw{display:flex;align-items:center;justify-content:center;margin-bottom:56px}
 #deck{position:relative;background:var(--bg);overflow:hidden;
@@ -1101,6 +1101,7 @@ function scaleDeck(){
   dw.style.height=Math.round(720*scale)+'px';
 }
 window.addEventListener('resize',scaleDeck);
+window.addEventListener('orientationchange',function(){setTimeout(scaleDeck,200);});
 scaleDeck();updateProgress();
 
   // Forest plot zoom
