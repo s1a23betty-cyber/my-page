@@ -27,6 +27,7 @@ body{background:#1A1A1C;display:flex;flex-direction:column;
   display:flex;align-items:center;justify-content:center;
   gap:14px;z-index:9999;opacity:0;transition:opacity .3s}
 .nav:hover{opacity:1}
+@media (pointer:coarse){.nav{opacity:1}}
 .nav button{background:none;border:1px solid #3A3A3A;color:#999;
   padding:5px 16px;border-radius:3px;cursor:pointer;font-size:14px;
   transition:all .2s;font-family:'Noto Sans TC',sans-serif}
@@ -1093,7 +1094,8 @@ document.addEventListener('keydown',e=>{
 function fs(){if(!document.fullscreenElement)document.documentElement.requestFullscreen().catch(()=>{});else document.exitFullscreen();}
 function scaleDeck(){
   const dw=document.getElementById('dw'),deck=document.getElementById('deck');
-  const scale=Math.min(window.innerWidth/1280,(window.innerHeight-56)/720);
+  const navH=56;
+  const scale=Math.min(window.innerWidth/1280,(window.innerHeight-navH)/720);
   deck.style.transform='scale('+scale+')';
   dw.style.width=Math.round(1280*scale)+'px';
   dw.style.height=Math.round(720*scale)+'px';
